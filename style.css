@@ -16,3 +16,19 @@ body {
 textarea {
   height: 250px;
 }
+
+.btn-secondary{
+  background-color: rgb(196, 199, 214);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
+  outline: none;
+}
+
+.button-read{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-top: 20px;
+}
