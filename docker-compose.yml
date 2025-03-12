@@ -1,0 +1,10 @@
+
+services:
+  web:
+    build: .
+    container_name: HW-03
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./storage:/app/storage  # Монтуємо папку storage для збереження даних
+    restart: unless-stopped
