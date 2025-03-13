@@ -5,6 +5,7 @@ import mimetypes
 import json
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
+import os
 
 
 class HttpHandler(BaseHTTPRequestHandler):
@@ -79,7 +80,7 @@ class HttpHandler(BaseHTTPRequestHandler):
         self.send_response(status)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        with open(filename, "rb") as fd:
+        with open(os.path.join("template", filename), "rb") as fd:
             self.wfile.write(fd.read())
 
     def send_static(self):
@@ -105,4 +106,3 @@ def run(server_class=HTTPServer, handler_class=HttpHandler):
 
 if __name__ == "__main__":
     run()
-
